@@ -10,3 +10,21 @@ puts robo.inspect
 
 robo.move
 puts robo.inspect
+
+puts "Now you can control your robo!Left, right, move!"
+word = gets.chomp
+until word == "breake"
+  (word = gets.chomp) && (
+  if word.downcase == "right"
+    robo.right
+	puts robo.inspect
+  elsif word.downcase == "left"
+    robo.left
+	puts robo.inspect
+  elsif word.downcase == "move"
+    robo.move
+	puts robo.inspect
+  else
+    puts "Please input correct command"
+  end)
+end

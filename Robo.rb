@@ -15,6 +15,8 @@ class Robo
 	  (@y = @y + 1)
 	elsif (((1..4).include?(@y)) && (@vector == "South"))
 	  (@y = @y - 1)
+	else
+	puts "It's impossible!"
 	end
   end
 
