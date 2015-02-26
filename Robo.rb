@@ -7,11 +7,15 @@ class Robo
   end
   
   def move
-   	(@x = @x + 1) if ((1...5).include?(@x)) || (@vector == "West")
-	(@x = @x - 1) if ((1...5).include?(@x)) || (@vector == "East")
-	(@y = @y + 1) if ((1...5).include?(@y)) || (@vector == "North")
-	(@y = @y - 1) if ((1...5).include?(@y)) || (@vector == "South")
-	puts @x, @y, @vector
+   	if (((0...4).include?(@x)) && (@vector == "West"))
+	  (@x = @x + 1)
+	elsif (((1..4).include?(@x)) && (@vector == "East"))
+	  (@x = @x - 1)
+	elsif (((0...4).include?(@y)) && (@vector == "North"))
+	  (@y = @y + 1)
+	elsif (((1..4).include?(@y)) && (@vector == "South"))
+	  (@y = @y - 1)
+	end
   end
 
   def right

@@ -8,3 +8,5 @@ puts robo.inspect
 robo.left
 puts robo.inspect
 
+robo.move
+puts robo.inspect
