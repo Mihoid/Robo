@@ -15,20 +15,22 @@ class Robo
   end
 
   def right
-    case
-    when @vector = "East" then @vector == "North"
-    when @vector = "North" then @vector == "West"
-    when @vector = "West" then @vector == "South"
-    when @vector = "South" then @vector == "East"
+    @vector = case @vector	
+    when "North" then "East" 
+    when "West" then "North" 
+    when "South" then "West"
+    when "East" then "South"
     end
   end
   
 
   def left
-    vector == "West" if vector == "South"
-    vector == "South" if vector == "East"
-    vector == "East" if vector == "North"
-    vector == "North" if vector == "West"	
+    @vector = case @vector	
+    when "North" then "West" 
+    when "West" then "South" 
+    when "South" then "East"
+    when "East" then "North"
+    end	
   end
   
 end
