@@ -15,11 +15,14 @@ class Robo
   end
 
   def right
-    vector == "West" if vector == "North"
-    vector == "South" if vector == "West"
-    vector == "East" if vector == "South"
-    vector == "North" if vector == "East"
+    case
+    when @vector = "East" then @vector == "North"
+    when @vector = "North" then @vector == "West"
+    when @vector = "West" then @vector == "South"
+    when @vector = "South" then @vector == "East"
+    end
   end
+  
 
   def left
     vector == "West" if vector == "South"
