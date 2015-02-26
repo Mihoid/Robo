@@ -1,12 +1,12 @@
 class Robo
 
-  def place
-    print "Enter x, please. x="
-	x = gets.to_i until ((1..5).include?(x))
-	print "Enter y, please. y="
-	y = gets.to_i until ((1..5).include?(y))
-	print "Enter vector North, South, East or West. vector is "
-	vector = gets.chomp.capitalize until (vector == "North" || vector =="South" || vector =="East" || vector =="West")
+  def place(x, y, vector)
+    #print "Enter x, please. x="
+	#x = gets.to_i until ((1..5).include?(x))
+	#print "Enter y, please. y="
+	#y = gets.to_i until ((1..5).include?(y))
+	#print "Enter vector North, South, East or West. vector is "
+	#vector = gets.chomp.capitalize until (vector == "North" || vector =="South" || vector =="East" || vector =="West")
   end
   
   def move
