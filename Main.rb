@@ -2,26 +2,18 @@ require_relative 'Robo'
 robo = Robo.new
 robo.place(0, 0, "North")
 
-robo.right
-puts robo.inspect
-
-robo.left
-puts robo.inspect
-
-robo.move
-puts robo.inspect
-
 puts "Now you can control your robo!Left, right, move!"
 word = 0
 until word == "breake"
   (word = gets.chomp) && (
-  if word.downcase == "right"
-    robo.right
+  case word.downcase
+    when "right" || RIGHT 
+	robo.right
 	puts robo.inspect
-  elsif word.downcase == "left"
+    when "left"
     robo.left
 	puts robo.inspect
-  elsif word.downcase == "move"
+    when "move"
     robo.move
 	puts robo.inspect
   else
