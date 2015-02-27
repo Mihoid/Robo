@@ -12,7 +12,7 @@ robo.move
 puts robo.inspect
 
 puts "Now you can control your robo!Left, right, move!"
-word = gets.chomp
+word = 0
 until word == "breake"
   (word = gets.chomp) && (
   if word.downcase == "right"

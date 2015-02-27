@@ -7,10 +7,10 @@ class Robo
   end
   
   def move
-   	if (((0...4).include?(@x)) && (@vector == "West"))
-	  (@x = @x + 1)
-	elsif (((1..4).include?(@x)) && (@vector == "East"))
+   	if (((1..4).include?(@x)) && (@vector == "West"))
 	  (@x = @x - 1)
+	elsif (((0...4).include?(@x)) && (@vector == "East"))
+	  (@x = @x + 1)
 	elsif (((0...4).include?(@y)) && (@vector == "North"))
 	  (@y = @y + 1)
 	elsif (((1..4).include?(@y)) && (@vector == "South"))
