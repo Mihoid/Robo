@@ -6,17 +6,17 @@ robo = Robo.new
 puts "Enter X Y VECTOR to put robo on table"
 x, y, vector = str = gets.chomp.split
 
-until ((0..4).include?(x.to_i)) && ((0..4).include?(y.to_i)) && ((vector.capitalize == "North" || vector.capitalize == "South" || vector.capitalize == "East" || vector.capitalize == "West"))
+# until ((0..4).include?(x.to_i)) && ((0..4).include?(y.to_i)) && ((vector.capitalize == "North" || vector.capitalize == "South" || vector.capitalize == "East" || vector.capitalize == "West"))
+  # str = gets.chomp
+  # x, y, vector = str.split
+  # puts x, y, vector
+# end
+
+until (/0?1?2?3?4?/ === x) && (/0?1?2?3?4?/ === y) && (/North|South|West|East/ === vector.capitalize)
   str = gets.chomp
   x, y, vector = str.split
   puts x, y, vector
 end
-
-# Возможна ли такая конструкция для определения условий?
-# until (/0?,1?,2?,3?,4?/ === x) && (/0?,1?,2?,3?,4?/ === y) && (/North?,South?,East?,West?/ === vector)
-  # str = gets.chomp
-  # x, y, vector = str.split
-# end
 
 
 x = x.to_i
