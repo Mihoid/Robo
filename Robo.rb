@@ -1,9 +1,17 @@
 class Robo
 
+def valid(x, y, vector)
+  until (/[0-4]/ === x) && (/[0-4]/ === y) && (/[NorthSouthWestEast]/ === vector.capitalize)
+  str = gets.chomp
+  x, y, vector = str.split
+  puts x, y, vector
+  end
+end  
+
 def place(x, y, vector)
   @x = x.to_i
   @y = y.to_i
-  @vector = vector
+  @vector = vector.capitalize
 end
   
 def move
