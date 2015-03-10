@@ -1,12 +1,8 @@
-require_relative 'Robo'
+require_relative 'robo'
 robo = Robo.new
-
-
 
 puts "Enter X Y VECTOR to put robo on table"
 x, y, vector = str = gets.chomp.split
-
-robo.valid(x, y, vector)
 robo.place(x, y, vector)
 
 puts "Now you can control your robo!Left, right, move! or stop"
