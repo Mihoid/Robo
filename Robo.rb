@@ -1,50 +1,40 @@
 class Robo
 
-def valid(x, y, vector)
-  until (/[0-4]/ === x) && (/[0-4]/ === y) && (/[NorthSouthWestEast]/ === vector.capitalize)
-  str = gets.chomp
-  x, y, vector = str.split
-  puts x, y, vector
-  end
-end  
+DIRECTION = %w(North East South West)
 
 def place(x, y, vector)
+  if (/[0-4]/ === x) && (/[0-4]/ === y) && (/[NorthSouthWestEast]/ === vector.capitalize!)
   @x = x.to_i
   @y = y.to_i
-  @vector = vector.capitalize
+  @vector = DIRECTION.index(vector)
+  end
 end
   
 def move
-  if (((1..4).include?(@x)) && (@vector == "West"))
-    (@x = @x - 1)
-  elsif (((0...4).include?(@x)) && (@vector == "East"))
-    (@x = @x + 1)
-  elsif (((0...4).include?(@y)) && (@vector == "North"))
-    (@y = @y + 1)
-  elsif (((1..4).include?(@y)) && (@vector == "South"))
-    (@y = @y - 1)
-  else
-  puts "There is no way to move"
+  case DIRECTION[@vector]
+  when "South"
+    @x = @x - 1 if @x > 0
+  when "East"
+    @x = @x + 1 if @x < 4
+  when "North"
+    @y = @y + 1 if @y < 4
+  when "West"
+    @y = @y - 1 if @y > 0
   end
+end
+
+def rotate(inc)
+  @vector = @vector + inc
 end
 
 def right
-  @vector = case @vector	
-  when "North" then "East" 
-  when "West" then "North" 
-  when "South" then "West"
-  when "East" then "South"
-  end
+  rotate(1)
+  @vector = 0 if @vector > 4
 end
-  
 
 def left
-  @vector = case @vector	
-    when "North" then "West" 
-    when "West" then "South" 
-    when "South" then "East"
-    when "East" then "North"
-    end	
+  rotate(-1)
+  @vector = 4 if @vector < 0
 end
   
 end
