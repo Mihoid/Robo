@@ -11,12 +11,11 @@ until word == "stop"
   case word.downcase
     when "right"
     robo.right
-    puts robo.inspect
     when "left"
     robo.left
-    puts robo.inspect
     when "move"
     robo.move
-    puts robo.inspect
+	when "init"
+	robo.init
   end)
 end

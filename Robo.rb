@@ -36,6 +36,8 @@ def left
   rotate(-1)
   @vector = 4 if @vector < 0
 end
-  
-end
 
+def init
+  puts "Now robo stay x=#{@x}, y=#{@y}, vector #{DIRECTION[@vector]}"
+end  
+end
