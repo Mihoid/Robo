@@ -17,10 +17,14 @@ class Robo
   end
 
   def right
-    @vector = @vector + 1
+    rotate(1)
   end
 
   def left
-    @vector = @vector - 1
+    rotate(-1)
   end
+end
+
+def rotate(inc)
+  @vector = @vector + inc
 end
