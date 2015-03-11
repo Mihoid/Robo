@@ -7,17 +7,18 @@ robo.place(x, y, vector)
 
 puts "Now you can control your robo!Left, right, move! or stop"
 word = 0
-until word == "stop"
-  (word = gets.chomp.downcase) && (
+loop do
+  word = gets.chomp.downcase
   case word.downcase
-    when "right"
+  when "right"
     robo.right
-    puts robo.inspect
-    when "left"
+  when "left"
     robo.left
-    puts robo.inspect
-    when "move"
+  when "move"
     robo.move
-    puts robo.inspect
-  end)
+  when "report"
+    robo.report
+  when "break"
+    break
+  end
 end
