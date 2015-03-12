@@ -1,6 +1,7 @@
 class Robo
   DIRECTIONS = %w(north east south west)
   RANGE = 0..4
+  HASH = {"north" => [0,1], "east" => [1,0], "south" => [0,-1], "west" => [-1,0]}
 
   def place(x, y, vector)
     @x = x.to_i
@@ -12,26 +13,16 @@ class Robo
   end
 
   def move
-    case DIRECTIONS[@vector]
-    when "West" 
-      @x = @x - 1 if @x > 0
-    when "East" 
-      @x = @x + 1 if @x < 4
-    when "North"
-      @y = @y + 1 if @y < 4
-    when "South" 
-      @y = @y - 1 if @y > 0
-    end
+    @x, @y = @x + HASH[DIRECTIONS[@vector]][0], @y + HASH[DIRECTIONS[@vector]][1] 
+    puts "x =#{@x}, y=#{@y}, vector #{DIRECTIONS[@vector]}" 
   end
 
   def right
     rotate(1)
-    @vector = 0 if @vector > 3
   end
 
   def left
     rotate(-1)
-    @vector = 3 if @vector < 0
   end
 
   def report
@@ -41,6 +32,6 @@ class Robo
   private
 
   def rotate(inc)
-    @vector = @vector + inc
+    @vector = (@vector + inc) % 4
   end
 end
