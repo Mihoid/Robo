@@ -1,11 +1,9 @@
 require_relative 'robo'
 robo = Robo.new
 
-loop do
   puts "Enter X Y VECTOR to put robo on table"
   x, y, vector = str = gets.chomp.split
-  break robo.place(x, y, vector)
-end
+  robo.place(x, y, vector)
 
 puts "Now you can control your robo!Left, right, move! or break"
 word = 0
