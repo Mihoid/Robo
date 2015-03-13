@@ -7,10 +7,10 @@ class Robo
     @x = x.to_i
     @y = y.to_i
     @vector = DIRECTIONS.index(vector)
-    print @x, @y, @vector
     if @vector.nil? || !SIZE.include?(@x) || !SIZE.include?(@y)
-      puts "incorrect data"
+      raise "Incorrect data"
     end
+    puts "#{@x}    #{@y}     #{@vector}"
   end
 
   def move
@@ -32,7 +32,7 @@ class Robo
   def report
     puts "Robo stay on x=#{@x}, y=#{@y}, vector #{DIRECTIONS[@vector]}"
   end
-  
+
   private
 
   def rotate(inc)

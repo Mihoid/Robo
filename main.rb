@@ -2,23 +2,12 @@ require_relative 'robo'
 robo = Robo.new
 
 puts "Enter X Y VECTOR to put robo on table"
-x, y, vector = str = gets.chomp.split
-robo.place(x, y, vector)
-
-puts "Now you can control your robo!Left, right, move! or break"
-word = 0
 loop do
-  word = gets.chomp.downcase
-  case word.downcase
-  when "right"
-    robo.right
-  when "left"
-    robo.left
-  when "move"
-    robo.move
-  when "report"
-    robo.report
-  when "break"
-    break
+  begin
+    print "> "
+    command = gets.chomp.downcase.split
+    robo.send command[0], *command[1,3]
+  rescue
+    puts "try again"
   end
 end
